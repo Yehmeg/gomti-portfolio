@@ -1,67 +1,37 @@
-import { projects } from "@/data/projects";
-
-export default function Projects() {
+export default function Navbar() {
   return (
-    <section
-      id="projects"
-      className="py-32 px-6 text-white"
+    <nav
+      className="
+      fixed
+      top-0
+      w-full
+      z-50
+      backdrop-blur-lg
+      bg-black/30
+      border-b
+      border-white/10
+      "
     >
-      <h2 className="text-5xl font-bold text-center">
-        Featured Projects
-      </h2>
-
       <div
         className="
-        grid
-        md:grid-cols-3
-        gap-8
-        mt-16
+        max-w-7xl
+        mx-auto
+        px-6
+        py-4
+        flex
+        justify-between
+        items-center
         "
       >
-        {projects.map((project) => (
-          <div
-            key={project.title}
-            className="
-            p-6
-            rounded-3xl
-            bg-white/5
-            backdrop-blur-lg
-            border
-            border-white/10
-            "
-          >
-            <h3 className="text-2xl font-bold">
-              {project.title}
-            </h3>
+        <h1 className="font-bold text-xl text-white">
+          Gomti Kumari
+        </h1>
 
-            <p className="mt-4 text-gray-400">
-              {project.description}
-            </p>
-
-            <p className="mt-4 text-cyan-400">
-              {project.metric}
-            </p>
-
-            <div className="flex flex-wrap gap-2 mt-4">
-              {project.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="
-                  px-3
-                  py-1
-                  rounded-full
-                  bg-cyan-500/10
-                  text-cyan-300
-                  text-sm
-                  "
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+        <div className="flex gap-6 text-gray-300">
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
-    </section>
+    </nav>
   );
 }
