@@ -1,4 +1,4 @@
-import { projects } from "@/data/projects";
+import { projects, type Project } from "@/data/projects";
 
 export default function Projects() {
   return (
@@ -11,7 +11,7 @@ export default function Projects() {
       </h2>
 
       <div className="grid md:grid-cols-3 gap-8 mt-16">
-        {projects.map((project: any) => (
+        {projects.map((project: Project) => (
           <div
             key={project.title}
             className="p-6 rounded-3xl bg-white/5"
@@ -28,7 +28,7 @@ export default function Projects() {
               {project.metric}
             </p>
 
-            <div className="flex flex-wrap gap-2 mt-4">
+              <div className="flex flex-wrap gap-2 mt-4">
               {project.tech.map((tech: string) => (
                 <span
                   key={tech}

@@ -1,4 +1,11 @@
-export const projects = [
+export type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  metric: string;
+};
+
+export const projects: Project[] = [
   {
     title: "PM2.5 Prediction & AQI Classification",
 

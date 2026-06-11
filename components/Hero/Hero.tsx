@@ -60,6 +60,7 @@
 // }
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
@@ -69,181 +70,209 @@ import AuroraBackground from "@/components/Aurora/AuroraBackground";
 import Stats from "@/components/Stats/Stats";
 
 import {
-  FaGithub,
-  FaLinkedin,
-  FaDownload,
+FaGithub,
+FaLinkedin,
+FaDownload,
 } from "react-icons/fa";
 
 export default function Hero() {
-  return (
-    <section
+return ( <section
+   className="
+   relative
+   min-h-screen
+   overflow-hidden
+   bg-[#050816]
+   text-white
+   flex
+   items-center
+   justify-center
+   px-6
+   py-20
+   "
+ > <AuroraBackground />
+
+  <motion.div
+    initial={{
+      opacity: 0,
+      y: 50,
+    }}
+    animate={{
+      opacity: 1,
+      y: 0,
+    }}
+    transition={{
+      duration: 1,
+    }}
+    className="
+    relative
+    z-10
+    text-center
+    max-w-5xl
+    "
+  >
+    {/* Profile Photo */}
+    <div className="flex justify-center mb-8">
+      <Image
+        
+        src="/photo.jpg"
+        alt="Gomti Kumari"
+        width={220}
+        height={220}
+        className="
+          rounded-full
+          border-4
+          border-cyan-500
+          object-cover
+          shadow-lg
+        "
+      />
+    </div>
+
+    {/* Badge */}
+    <div
       className="
-      relative
-      min-h-screen
-      overflow-hidden
-      bg-[#050816]
-      text-white
-      flex
-      items-center
-      justify-center
-      px-6
+      inline-flex
+      px-4
+      py-2
+      rounded-full
+      bg-white/10
+      backdrop-blur-md
+      border
+      border-white/10
+      mb-6
       "
     >
-      <AuroraBackground />
+      IEEE Published Author
+    </div>
 
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 50,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 1,
-        }}
+    {/* Name */}
+    <h1
+      className="
+      text-5xl
+      md:text-8xl
+      font-extrabold
+      "
+    >
+      {profile.name}
+    </h1>
+
+    {/* Tagline */}
+    <h2
+      className="
+      mt-6
+      text-xl
+      md:text-3xl
+      text-gray-300
+      "
+    >
+      {profile.tagline}
+    </h2>
+
+    {/* Typing Animation */}
+    <div
+      className="
+      mt-8
+      text-cyan-400
+      text-xl
+      md:text-3xl
+      font-semibold
+      "
+    >
+      <TypeAnimation
+        sequence={[
+          "Machine Learning",
+          2000,
+          "Data Science",
+          2000,
+          "Environmental AI",
+          2000,
+          "Predictive Analytics",
+          2000,
+          "AI Research",
+          2000,
+        ]}
+        wrapper="span"
+        speed={50}
+        repeat={Infinity}
+      />
+    </div>
+
+    {/* Buttons */}
+    <div
+      className="
+      flex
+      justify-center
+      gap-4
+      flex-wrap
+      mt-10
+      "
+    >
+      <a
+        href="/resume.pdf"
+        download
         className="
-        relative
-        z-10
-        text-center
-        max-w-5xl
+        flex
+        items-center
+        gap-2
+        px-6
+        py-3
+        rounded-full
+        bg-cyan-500
+        hover:bg-cyan-600
+        transition
         "
       >
-        <div
-          className="
-          inline-flex
-          px-4
-          py-2
-          rounded-full
-          bg-white/10
-          backdrop-blur-md
-          border
-          border-white/10
-          mb-6
-          "
-        >
-          IEEE Published Author
-        </div>
+        <FaDownload />
+        Resume
+      </a>
 
-        <h1
-          className="
-          text-6xl
-          md:text-8xl
-          font-extrabold
-          "
-        >
-          {profile.name}
-        </h1>
+      <a
+        href="#projects"
+        className="
+        px-6
+        py-3
+        rounded-full
+        border
+        border-cyan-500
+        hover:bg-cyan-500/10
+        transition
+        "
+      >
+        View Projects
+      </a>
+    </div>
 
-        <h2
-          className="
-          mt-6
-          text-2xl
-          md:text-4xl
-          text-gray-300
-          "
-        >
-          {profile.tagline}
-        </h2>
+    {/* Social Links */}
+    <div
+      className="
+      flex
+      justify-center
+      gap-8
+      mt-8
+      text-3xl
+      "
+    >
+      <a
+        href={profile.github}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaGithub />
+      </a>
 
-        <div
-          className="
-          mt-8
-          text-cyan-400
-          text-xl
-          md:text-3xl
-          font-semibold
-          "
-        >
-          <TypeAnimation
-            sequence={[
-              "Machine Learning",
-              2000,
-              "Data Science",
-              2000,
-              "Environmental AI",
-              2000,
-              "Predictive Analytics",
-              2000,
-              "AI Research",
-              2000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
-        </div>
+      <a
+        href={profile.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaLinkedin />
+      </a>
+    </div>
 
-        <div
-          className="
-          flex
-          justify-center
-          gap-4
-          flex-wrap
-          mt-10
-          "
-        >
-          <a
-            href="/resume.pdf"
-            className="
-            flex
-            items-center
-            gap-2
-            px-6
-            py-3
-            rounded-full
-            bg-cyan-500
-            hover:bg-cyan-600
-            transition
-            "
-          >
-            <FaDownload />
-            Resume
-          </a>
+    {/* Stats */}
+    <Stats />
+  </motion.div>
+</section>
 
-          <a
-            href="#projects"
-            className="
-            px-6
-            py-3
-            rounded-full
-            border
-            border-cyan-500
-            hover:bg-cyan-500/10
-            transition
-            "
-          >
-            Projects
-          </a>
-        </div>
-
-        <div
-          className="
-          flex
-          justify-center
-          gap-8
-          mt-8
-          text-3xl
-          "
-        >
-          <a
-            href={profile.github}
-            target="_blank"
-          >
-            <FaGithub />
-          </a>
-
-          <a
-            href={profile.linkedin}
-            target="_blank"
-          >
-            <FaLinkedin />
-          </a>
-        </div>
-
-        <Stats />
-      </motion.div>
-    </section>
-  );
+);
 }
