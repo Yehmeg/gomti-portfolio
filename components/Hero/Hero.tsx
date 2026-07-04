@@ -1,278 +1,35 @@
-// "use client";
-
-// import { motion } from "framer-motion";
-// import { profile } from "@/data/profile";
-// import { FaGithub, FaLinkedin } from "react-icons/fa";
-
-// export default function Hero() {
-//   return (
-//     <section
-//       className="
-//       min-h-screen
-//       flex
-//       items-center
-//       justify-center
-//       bg-black
-//       text-white
-//       px-6
-//       "
-//     >
-//       <motion.div
-//         initial={{ opacity: 0, y: 60 }}
-//         animate={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 1 }}
-//         className="text-center"
-//       >
-//         <h1 className="text-6xl md:text-8xl font-bold">
-//           {profile.name}
-//         </h1>
-
-//         <h2 className="mt-6 text-2xl md:text-4xl text-gray-300">
-//           {profile.tagline}
-//         </h2>
-
-//         <div
-//           className="
-//           mt-10
-//           flex
-//           justify-center
-//           gap-6
-//           text-3xl
-//           "
-//         >
-//           <a
-//             href={profile.github}
-//             target="_blank"
-//           >
-//             <FaGithub />
-//           </a>
-
-//           <a
-//             href={profile.linkedin}
-//             target="_blank"
-//           >
-//             <FaLinkedin />
-//           </a>
-//         </div>
-//       </motion.div>
-//     </section>
-//   );
-// }
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
-
-import { profile } from "@/data/profile";
-
-import AuroraBackground from "@/components/Aurora/AuroraBackground";
-import Stats from "@/components/Stats/Stats";
-
-import {
-FaGithub,
-FaLinkedin,
-FaDownload,
-} from "react-icons/fa";
+import HeroContent from "./HeroContent";
+import HeroImage from "./HeroImage";
 
 export default function Hero() {
-return ( <section
-   className="
-   relative
-   min-h-screen
-   overflow-hidden
-   bg-[#050816]
-   text-white
-   flex
-   items-center
-   justify-center
-   px-6
-   py-20
-   "
- > <AuroraBackground />
-
-  <motion.div
-    initial={{
-      opacity: 0,
-      y: 50,
-    }}
-    animate={{
-      opacity: 1,
-      y: 0,
-    }}
-    transition={{
-      duration: 1,
-    }}
-    className="
-    relative
-    z-10
-    text-center
-    max-w-5xl
-    "
-  >
-    {/* Profile Photo */}
-    <div className="flex justify-center mb-8">
-      <Image
-        
-        src="/photo.jpg"
-        alt="Gomti Kumari"
-        width={220}
-        height={220}
-        className="
-          rounded-full
-          border-4
-          border-cyan-500
-          object-cover
-          shadow-lg
-        "
-      />
-    </div>
-
-    {/* Badge */}
-    <div
-      className="
-      inline-flex
-      px-4
-      py-2
-      rounded-full
-      bg-white/10
-      backdrop-blur-md
-      border
-      border-white/10
-      mb-6
-      "
+  return (
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden px-6 lg:px-16 pt-32"
     >
-      IEEE Published Author
-    </div>
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-8 lg:gap-20 items-center lg:min-h-[85vh]">
 
-    {/* Name */}
-    <h1
-      className="
-      text-5xl
-      md:text-8xl
-      font-extrabold
-      "
-    >
-      {profile.name}
-    </h1>
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9 }}
+        >
+          <HeroContent />
+        </motion.div>
 
-    {/* Tagline */}
-    <h2
-      className="
-      mt-6
-      text-xl
-      md:text-3xl
-      text-gray-300
-      "
-    >
-      {profile.tagline}
-    </h2>
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="flex justify-center"
+        >
+          <HeroImage />
+        </motion.div>
 
-    {/* Typing Animation */}
-    <div
-      className="
-      mt-8
-      text-cyan-400
-      text-xl
-      md:text-3xl
-      font-semibold
-      "
-    >
-      <TypeAnimation
-        sequence={[
-          "Machine Learning",
-          2000,
-          "Data Science",
-          2000,
-          "Environmental AI",
-          2000,
-          "Predictive Analytics",
-          2000,
-          "AI Research",
-          2000,
-        ]}
-        wrapper="span"
-        speed={50}
-        repeat={Infinity}
-      />
-    </div>
-
-    {/* Buttons */}
-    <div
-      className="
-      flex
-      justify-center
-      gap-4
-      flex-wrap
-      mt-10
-      "
-    >
-      <a
-        href="/resume.pdf"
-        download
-        className="
-        flex
-        items-center
-        gap-2
-        px-6
-        py-3
-        rounded-full
-        bg-cyan-500
-        hover:bg-cyan-600
-        transition
-        "
-      >
-        <FaDownload />
-        Resume
-      </a>
-
-      <a
-        href="#projects"
-        className="
-        px-6
-        py-3
-        rounded-full
-        border
-        border-cyan-500
-        hover:bg-cyan-500/10
-        transition
-        "
-      >
-        View Projects
-      </a>
-    </div>
-
-    {/* Social Links */}
-    <div
-      className="
-      flex
-      justify-center
-      gap-8
-      mt-8
-      text-3xl
-      "
-    >
-      <a
-        href={profile.github}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaGithub />
-      </a>
-
-      <a
-        href={profile.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaLinkedin />
-      </a>
-    </div>
-
-    {/* Stats */}
-    <Stats />
-  </motion.div>
-</section>
-
-);
+      </div>
+    </section>
+  );
 }

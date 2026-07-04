@@ -1,45 +1,57 @@
-import { projects, type Project } from "@/data/projects";
+"use client";
+
+import FeaturedProject from "./FeaturedProject";
+import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 px-6 text-white"
+      className="relative py-16 px-6"
     >
-      <h2 className="text-5xl font-bold text-center">
-        Featured Projects
-      </h2>
+      <div className="max-w-7xl mx-auto">
 
-      <div className="grid md:grid-cols-3 gap-8 mt-16">
-        {projects.map((project: Project) => (
-          <div
-            key={project.title}
-            className="p-6 rounded-3xl bg-white/5"
-          >
-            <h3 className="text-2xl font-bold">
-              {project.title}
-            </h3>
+        <h2 className="text-5xl font-black text-center mb-3">
+          <span className="text-cyan-400 font-semibold tracking-[0.25em] uppercase">
+  Featured AI Project
+</span>
+        </h2>
 
-            <p className="mt-4">
-              {project.description}
-            </p>
+        <p className="text-center text-gray-400 mb-5 max-w-2xl mx-auto">
+          AI-powered solutions built to solve real-world problems using
+          Machine Learning, Deep Learning and Data Science.
+        </p>
 
-            <p className="mt-4 text-cyan-400">
-              {project.metric}
-            </p>
+        <FeaturedProject />
 
-              <div className="flex flex-wrap gap-2 mt-4">
-              {project.tech.map((tech: string) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 rounded-full bg-cyan-500/10"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+        <div className="grid lg:grid-cols-2 gap-10 mt-5">
+          <ProjectCard
+            title="Road Traffic Accident Severity Prediction"
+            description="Machine learning model for predicting road accident severity using historical traffic data."
+            video="/projects/road.mp4"
+            github="https://github.com/Yehmeg/Road-Traffic-Accident-Severity-Prediction"
+            tags={[
+              "Python",
+              "XGBoost",
+              "Random Forest",
+              "Pandas",
+            ]}
+          />
+
+          <ProjectCard
+            title="AI Phishing Detection"
+            description="AI-powered phishing detection system using NLP and machine learning."
+            video="/projects/mail.mp4"
+            github="https://github.com/Yehmeg/Road-Traffic-Accident-Severity-Prediction"
+            tags={[
+              "Python",
+              "TF-IDF",
+              "Scikit-learn",
+              "NLP",
+            ]}
+          />
+        </div>
+
       </div>
     </section>
   );
