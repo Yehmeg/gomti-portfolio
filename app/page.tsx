@@ -1,15 +1,15 @@
-import Navbar from "@/components/navbar/Navbar";
-import Hero from "@/components/hero/Hero";
+import Navbar from "@/components/Navbar/Navbar";
+import Hero from "@/components/Hero/Hero";
 import Education from "@/components/education/Education";
 import Dashboard from "@/components/dashboard/Dashboard";
-import Research from "@/components/research/Research";
+import Research from "@/components/Research/Research";
 import Skills from "@/components/skills/Skills";
-import Projects from "@/components/projects/Projects";
-import Achievements from "@/components/achievements/Achievements";
-// import Timeline from "@/components/timeline/Timeline";
-import Hackathons from "@/components/hackathons/Hackathons";
-import Contact from "@/components/contact/Contact";
-import Footer from "@/components/footer/Footer";
+import Projects from "@/components/Projects/Projects";
+import Achievements from "@/components/Achievements/Achievements";
+// import Timeline from "@/components/Timeline/Timeline";
+import Hackathons from "@/components/Hackathons/Hackathons";
+import Contact from "@/components/Contact/Contact";
+import Footer from "@/components/Footer/Footer";
 
 
 export default function Home() {
