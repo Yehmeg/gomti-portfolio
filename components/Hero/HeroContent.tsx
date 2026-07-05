@@ -112,6 +112,7 @@ export default function HeroContent() {
       <div className="flex flex-wrap justify-center lg:justify-start gap-5 mt-10">
 
         <a
+         href="#projects"
           className="
           px-8
           py-4
@@ -130,7 +131,9 @@ export default function HeroContent() {
           View Projects
         </a>
 
+
         <a
+        href="/assets/resume.pdf"
           className="
           px-8
           py-4
