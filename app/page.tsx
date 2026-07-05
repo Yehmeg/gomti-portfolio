@@ -27,7 +27,7 @@ export default function Home() {
 
       <Research />
 
-      <Skills /> *
+      <Skills /> 
 
       {/* <Timeline /> */}
 
