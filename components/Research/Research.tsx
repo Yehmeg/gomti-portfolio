@@ -85,24 +85,74 @@ export default function Research() {
 
           </div>
 
-          <button
-            className="
-              mt-10
-              px-6
-              py-3
-              rounded-xl
-              bg-cyan-500
-              text-black
-              flex
-              items-center
-              gap-3
-            "
-          >
-            <FaFilePdf />
+<div className="mt-8 space-y-3 text-gray-300">
 
-            View Publication
-          </button>
+  <p>
+    <span className="font-semibold text-white">Conference:</span>{" "}
+    2026 Sixth International Conference on Advances in Electrical,
+    Computing, Communications and Sustainable Technologies (ICAECT)
+  </p>
 
+  <p>
+    <span className="font-semibold text-white">Conference Date:</span>{" "}
+    08–09 January 2026
+  </p>
+
+  <p>
+    <span className="font-semibold text-white">Published:</span>{" "}
+    13 March 2026
+  </p>
+
+  <p>
+    <span className="font-semibold text-white">Publisher:</span>{" "}
+    IEEE
+  </p>
+
+  <p>
+    <span className="font-semibold text-white">Location:</span>{" "}
+    Bhilai, India
+  </p>
+
+  <p>
+    <span className="font-semibold text-white">DOI:</span>{" "}
+    <a
+      href="https://doi.org/10.1109/ICAECT68478.2026.11425951"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-cyan-400 hover:underline"
+    >
+      10.1109/ICAECT68478.2026.11425951
+    </a>
+  </p>
+
+</div>
+
+<div className="mt-8 flex flex-wrap gap-4">
+
+  <a
+    href="https://ieeexplore.ieee.org/document/11425951"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      px-6
+      py-3
+      rounded-xl
+      bg-cyan-500
+      text-black
+      inline-flex
+      items-center
+      gap-3
+      hover:bg-cyan-400
+      hover:scale-105
+      transition-all
+      duration-300
+    "
+  >
+    <FaFilePdf />
+    View Publication
+  </a>
+
+</div>
         </div>
 
       </div>
