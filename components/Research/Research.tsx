@@ -46,7 +46,7 @@ export default function Research() {
               </p>
 
               <h3 className="text-3xl font-bold mt-2">
-                Satellite-Based Air Quality Prediction Using Ensemble Machine Learning
+                PM 2.5 Prediction and Remark Classification
               </h3>
 
             </div>
