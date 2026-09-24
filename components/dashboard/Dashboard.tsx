@@ -5,42 +5,22 @@ import LeetcodeAnalytics from "./LeetcodeAnalytics";
 
 export default function Dashboard() {
   return (
-    <section className="py-24">
+    <section className="py-16">
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
 
-        <h2
-          className="
-          text-6xl
-          font-black
-          text-center
-          "
-        >
-          Developer Dashboard
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+            Developer Dashboard
+          </h2>
+          <p className="text-gray-400 mt-3 text-lg">
+            Live coding activity, contributions and competitive programming.
+          </p>
+        </div>
 
-        <p
-          className="
-          text-gray-400
-          text-center
-          mt-4
-          mb-16
-          "
-        >
-          Live coding activity, contributions and competitive programming.
-        </p>
-
-        <div
-          className="
-          grid
-          lg:grid-cols-2
-          gap-10
-          "
-        >
+        <div className="grid grid-cols-1 gap-6">
           <GithubAnalytics />
-
           <LeetcodeAnalytics />
-
         </div>
 
       </div>

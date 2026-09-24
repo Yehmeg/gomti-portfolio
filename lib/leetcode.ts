@@ -1,11 +1,15 @@
-import { LeetcodeStats } from "@/types/leetcode";
+import { LeetcodeData } from "@/types/leetcode";
 
-export async function getLeetcodeStats(): Promise<LeetcodeStats> {
+interface LeetcodeErrorResponse {
+  error: string;
+}
 
+export async function getLeetcodeData(): Promise<LeetcodeData> {
   const res = await fetch("/api/leetcode");
 
   if (!res.ok) {
-    throw new Error("Failed to fetch LeetCode data.");
+    const errorData: LeetcodeErrorResponse = await res.json().catch(() => ({ error: "Failed to fetch LeetCode data." }));
+    throw new Error(errorData.error || "Failed to fetch LeetCode data.");
   }
 
   return res.json();

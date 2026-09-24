@@ -7,6 +7,7 @@ interface StatCardProps {
   value: string | number;
   icon: React.ReactNode;
   color?: string;
+  compact?: boolean;
   
 }
 
@@ -15,12 +16,12 @@ export default function StatCard({
   value,
   icon,
   color = "cyan",
+  compact = false,
   
-
 }: StatCardProps) {
   return (
     <motion.div
-      whileHover={{
+      whileHover={compact ? {} : {
         y: -5,
         scale: 1.02,
       }}
@@ -28,11 +29,11 @@ export default function StatCard({
         duration: 0.25,
       }}
       className={`
-        rounded-2xl
+        rounded-lg
         border
-        p-5
         backdrop-blur-xl
         transition-all
+        ${compact ? "p-2" : "p-5"}
         ${
           color === "yellow"
             ? "border-yellow-500/20 bg-yellow-500/5 hover:border-yellow-400"
@@ -41,33 +42,33 @@ export default function StatCard({
       `}
     >
       <div
-        className={`text-2xl ${
+        className={`${
           color === "yellow"
             ? "text-yellow-400"
             : "text-cyan-400"
-        }`}
+        } ${compact ? "text-base" : "text-2xl"}`}
       >
         {icon}
       </div>
 
       <h3
-        className="
-          mt-4
-          text-4xl
+        className={`
+          mt-1
           font-black
-        "
+          ${compact ? "text-xl" : "text-4xl"}
+        `}
       >
         {value}
       </h3>
 
       <p
-        className="
-          mt-1
+        className={`
+          mt-0.5
           uppercase
-          tracking-[0.2em]
-          text-xs
+          tracking-[0.15em]
           text-gray-400
-        "
+          ${compact ? "text-[9px]" : "text-xs"}
+        `}
       >
         {title}
       </p>
