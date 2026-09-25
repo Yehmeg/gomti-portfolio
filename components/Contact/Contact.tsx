@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin, FaFileDownload } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
@@ -39,13 +40,13 @@ export default function Contact() {
 
           <div className="flex flex-wrap justify-center gap-6 mt-12">
 
-            <a
-              href="mailto:gomtikumari26@gmail.com"
+            <Link
+              href="/contact"
               className="px-6 py-4 rounded-2xl bg-cyan-500 text-black font-semibold hover:scale-105 transition"
             >
               <FaEnvelope className="inline mr-2" />
               Email
-            </a>
+            </Link>
 
             <a
               href="https://github.com/Yehmeg"
