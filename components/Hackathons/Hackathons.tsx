@@ -36,13 +36,13 @@ export default function Hackathons() {
 
   return (
     <section className="py-24 px-6 text-white">
-      <h2 className="text-5xl font-bold text-center mb-16">
-        Hackathons
-      </h2>
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-5xl font-bold text-center mb-16">
+          Hackathons
+        </h2>
 
-      <div className="relative">
         <div
-          className="hackathon-carousel flex gap-8 overflow-x-auto scroll-snap-x snap-mandatory pb-4 scrollbar-hide"
+          className="hackathon-carousel flex gap-8 overflow-x-auto scroll-snap-x snap-mandatory pb-4 scrollbar-hide relative"
           onScroll={handleScroll}
         >
           {hackathons.map((item: Hackathon, index: number) => (

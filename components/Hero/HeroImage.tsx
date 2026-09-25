@@ -96,7 +96,7 @@ bg-[#0B1220]
 "
       >
         <Image
-          src="/assets/profile.jpg"
+          src="/assets/profile.png"
           alt="Gomti Kumari"
           fill
           className="object-cover"

@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     description: "AI/ML Engineer and Data Science enthusiast building machine learning systems, predictive analytics solutions, and AI-driven applications.",
     images: [
       {
-        url: "/opengraph-image",
+        url: `${siteUrl}/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: "Gomti Kumari - AI/ML Engineer & Data Scientist Portfolio",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gomti Kumari | AI/ML Engineer & Data Scientist",
     description: "AI/ML Engineer and Data Science enthusiast building machine learning systems, predictive analytics solutions, and AI-driven applications.",
-    images: ["/opengraph-image"],
+    images: [`${siteUrl}/opengraph-image.png`],
     creator: "@GomtiKumari",
   },
   verification: {
